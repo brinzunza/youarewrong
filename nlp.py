@@ -17,7 +17,7 @@ def analyze_argument(argument):
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)
-    return response.json()["choices"][0]["message"]
+    return response.json()["choices"][0]["message"]["content"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
